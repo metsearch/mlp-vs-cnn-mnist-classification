@@ -48,12 +48,12 @@ def learn_with_mlp(data_loader, nb_epochs: int, device: th.device, path2model: s
     th.save(net.cpu(), os.path.join(path2model, 'network_dnn.th'))
     logger.info('The model was saved ...!')
     
-    plt.plot(range(1, nb_epochs + 1), losses, label='Training Loss')
+    plt.plot(range(1, nb_epochs + 1), losses, label='MLP Training Loss')
     plt.xlabel('Epoch')
     plt.ylabel('Loss')
-    plt.title('Training Loss Curve')
+    plt.title('MLP Training Loss Curve')
     plt.legend()
-    plt.savefig(os.path.join(path2metrics, 'network_dnn_loss.png'))
+    plt.savefig(os.path.join(path2metrics, 'mlp_training_loss.png'))
     plt.show()
     
 def learn_with_cnn(train_loader, nb_epochs: int, device: th.device, path2model: str, path2metrics: str):

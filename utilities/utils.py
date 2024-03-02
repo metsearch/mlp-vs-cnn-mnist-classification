@@ -5,7 +5,7 @@ import seaborn as sns
 from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
 
-from .log import logger 
+from .log import logger
     
 def display_images_with_predictions(path2metrics, arch, images, predictions, ground_truths, num_images=40, num_images_per_row=10):
     images_to_display = images[:num_images]
