@@ -1,10 +1,20 @@
-# MNIST MLP vs CNN Classifier
+# MLP vs CNN for MNIST Classifier
 
-This project is a deep neural network (DNN) classifier for the MNIST dataset. The MNIST dataset consists of handwritten digits and is commonly used as a benchmark for image classification tasks.
+## Overview
 
-## Installation
+This project focuses on training and inference for image classification using the MNIST dataset. It provides functionality for training models (both Multi-Layer Perceptron - MLP and Convolutional Neural Network - CNN) and conducting inference on test data. The project is organized into separate modules for learning and inference, with utility functions and command-line interface (CLI) options for customization.
 
-1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your-username/mnist-dnn-classifier.git
+<p align="center">
+  <img src="./metrics/mlp_confusion_matrix.png" width="45%">
+  <img src="./metrics/cnn_confusion_matrix.png" width="45%">
+  <h3 align="center">
+    Confusion matrix (MLP vs CNN)
+  </h3>  
+</p>
+
+## Requirements
+
+- Python 3.10 or later
+- Click
+- PyTorch
