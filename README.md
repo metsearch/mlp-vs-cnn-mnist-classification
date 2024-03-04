@@ -8,9 +8,9 @@ This project focuses on training and inference for image classification using th
 <p align="center">
   <img src="./metrics/mlp_confusion_matrix.png" width="45%">
   <img src="./metrics/cnn_confusion_matrix.png" width="45%">
-  <h3 align="center">
+  <h6 align="center">
     Confusion matrix (MLP vs CNN)
-  </h3>  
+  </h6>
 </p>
 
 ## Requirements
