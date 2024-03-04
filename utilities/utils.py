@@ -33,10 +33,10 @@ def plot_confusion_matrix(path2metrics, arch, y_true, y_pred, classes):
     cm_normalized = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
     
     plt.figure(figsize=(8, 6))
-    sns.heatmap(cm_normalized, annot=True, fmt=".2f", cmap="Blues", xticklabels=classes, yticklabels=classes)
-    plt.title("Confusion Matrix")
-    plt.xlabel("Predicted Label")
-    plt.ylabel("True Label")
+    sns.heatmap(cm_normalized, annot=True, fmt='.2f', cmap='Blues', xticklabels=classes, yticklabels=classes)
+    plt.title(f'{arch.upper()} Confusion Matrix')
+    plt.xlabel('Predicted Label')
+    plt.ylabel('True Label')
     plt.savefig(os.path.join(path2metrics, f'{arch}_confusion_matrix.png'))
     plt.show()
 

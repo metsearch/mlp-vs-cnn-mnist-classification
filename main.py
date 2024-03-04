@@ -60,7 +60,7 @@ def learning(nb_epochs, bt_size, arch):
 
 @router_cmd.command()
 @click.option('--path2models', help='path to models', type=click.Path(True), default='models/')
-@click.option('--model_name', help='vectorization', type=str, default='network_dnn.th')
+@click.option('--model_name', help='vectorization', type=str, default='mlp_network.th')
 @click.option('--bt_size', help='batch size', type=int, default=32)
 @click.option('--arch', help='cnn or mlp', type=click.Choice(['cnn', 'mlp']), default='mlp')
 def inference(path2models, model_name, bt_size, arch):
