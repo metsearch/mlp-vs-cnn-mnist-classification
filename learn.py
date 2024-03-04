@@ -60,13 +60,13 @@ def learn_with_mlp(data_loader, nb_epochs: int, device: th.device, path2model: s
 def learn_with_cnn(data_loader, nb_epochs: int, device: th.device, path2model: str, path2metrics: str):
     layer_cfg = {
         'convs': {
-            'shapes': [1, 16, 32, 64],
-            'dropouts': [0.2, 0.2, 0.2]
+            'shapes': [1, 16, 32],
+            'dropouts': [0.2, 0.2]
         },
         'linears': {
-            'shapes': [64*7*7, 64, 10],
+            'shapes': [32*7*7, 64, 10],
             'non_linears': [1, 0],
-            'dropouts': [0.2, 0.0]
+            'dropouts': [0.1, 0.0]
         }
     }
     net = CNN_Model(layer_cfg)

@@ -28,8 +28,27 @@ def mlp_inference(test_loader, model, device):
 
     return images, predictions, ground_truths
 
-def cnn_inference():
-    pass
+def cnn_inference(test_loader, model, device):
+    predictions = []
+    ground_truths = []
+    images = []
+    
+    with th.no_grad():
+        for X, Y in track(test_loader, description='Inference...'):
+            X = Variable(X)
+            Y = Variable(Y)
+            
+            X = X.to(device)
+            Y = Y.to(device)
+
+            P = model(X)
+            predictions.extend(th.argmax(P, dim=1).cpu().numpy())
+            ground_truths.extend(Y.cpu().numpy())
+            images.extend(X.cpu().numpy())
+
+    model.train()
+
+    return images, predictions, ground_truths
 
 if __name__ == '__main__':
     logger.info('Inference test...')

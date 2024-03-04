@@ -60,14 +60,17 @@ def learning(nb_epochs, bt_size, arch):
 
 @router_cmd.command()
 @click.option('--path2models', help='path to models', type=click.Path(True), default='models/')
-@click.option('--model_name', help='vectorization', type=str, default='mlp_network.th')
 @click.option('--bt_size', help='batch size', type=int, default=32)
 @click.option('--arch', help='cnn or mlp', type=click.Choice(['cnn', 'mlp']), default='mlp')
-def inference(path2models, model_name, bt_size, arch):
+def inference(path2models, bt_size, arch):
     logger.debug('Inference...')
     path2metrics = 'metrics/'
     if not os.path.exists(path2metrics):
         os.makedirs(path2metrics)
+    if arch == 'mlp':
+        model_name = 'mlp_network.th'
+    else:
+        model_name = 'cnn_network.th'
     model = th.load(os.path.join(path2models, model_name))
     device = th.device('cuda:0' if th.cuda.is_available() else 'cpu')
     test_loader = DataLoader(
